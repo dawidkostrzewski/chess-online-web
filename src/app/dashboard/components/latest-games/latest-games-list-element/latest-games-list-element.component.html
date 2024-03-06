@@ -1,0 +1,30 @@
+<div class="latest-game-list-element">
+    <div class="latest-game-list-element-opponent">
+<!--        <div class="latest-game-list-element__opponent&#45;&#45;profile-image">-->
+<!--            <img [src]="game?.opponentProfileImage" alt=""/>-->
+<!--        </div>-->
+        <div class="latest-game-list-element-opponent__details">
+            <div class="latest-game-list-element-opponent__details--opponent-name-header">Opponent:</div>
+            <div class="latest-game-list-element-opponent__details--opponent-name">{{game?.opponentName}}</div>
+        </div>
+    </div>
+    <div class="latest-game-list-element-game">
+        <div class="latest-game-list-element-game__status">
+            <div class="latest-game-list-element-game__status--header">Current game status:</div>
+            <div class="latest-game-list-element-game__status--value">{{game?.finished ? 'Finished' : game?.playerCanMove ? 'Waiting for player move' : 'Waiting for opponent move'}}</div>
+        </div>
+    </div>
+    <div class="latest-game-list-element__actions">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <icon-svg [icon]="'more_vert'"></icon-svg>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <span>Send a game proposal</span>
+            </button>
+            <button mat-menu-item disabled>
+                <span>Invite to friends list</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

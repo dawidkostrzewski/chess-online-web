@@ -1,0 +1,26 @@
+.main-menu
+    height: 100vh
+    width: 100px
+    background-color: rgb(40, 40, 40)
+    &__container
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 32px 0
+        &--item
+            display: flex
+            flex-direction: column
+            margin: 32px 0
+            &:hover
+                cursor: pointer
+                background-color: rgb(200, 1, 199)
+                border-radius: 100%
+                padding: 12px
+                margin: 20px 0
+        .active
+            cursor: pointer
+            background-color: rgb(200, 1, 199)
+            border-radius: 100%
+            padding: 12px
+            margin: 20px 0
+

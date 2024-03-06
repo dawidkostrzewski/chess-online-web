@@ -1,0 +1,27 @@
+.games
+    display: flex
+    flex-direction: row
+    .games-list
+        margin-top: -24px
+        margin-left: -32px
+        box-sizing: border-box
+        display: flex
+        flex-direction: column
+        width: 300px
+        border-right: 1px solid #323232
+        &__header
+            height: 80px
+            padding: 8px 16px
+            box-sizing: border-box
+            &--text
+                font-size: 24px
+            &--filter
+                font-size: 12px
+
+        &__container
+            display: flex
+            flex-direction: column
+            gap: 8px
+            height: calc(100vh - 80px)
+            max-height: calc(100vh - 80px)
+            overflow-y: auto

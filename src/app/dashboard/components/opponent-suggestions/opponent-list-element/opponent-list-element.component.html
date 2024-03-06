@@ -1,0 +1,30 @@
+<div class="opponent-list-element">
+    <div class="opponent-list-element__image">
+        <img [src]="opponent?.profileImage" width="40px" height="40px"/>
+    </div>
+    <div class="opponent-list-element__info">
+        <div class="opponent-list-element__info--name">{{opponent?.name}}</div>
+        <div class="opponent-list-element__info--points">ELO points: {{opponent?.points}}</div>
+    </div>
+    <div class="opponent-list-element_actions">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <icon-svg [icon]="'more_vert'"></icon-svg>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngIf="!opponent?.inviteId; else inviteSent" [disabled]="opponent?.inviteId" (click)="sendGameInvite.emit(opponent?.accountId)">
+                <span>Send a game proposal</span>
+            </button>
+            <ng-template #inviteSent>
+                <button mat-menu-item *ngIf="opponent?.inviteId && opponent?.inviteSenderId === accountId" [disabled]="opponent?.inviteId" (click)="sendGameInvite.emit(opponent?.accountId)">
+                    <span>Waiting for invite acceptation</span>
+                </button>
+                <button mat-menu-item *ngIf="opponent?.inviteId && opponent?.inviteSenderId != accountId" (click)="acceptGameInvite.emit(opponent?.inviteId)">
+                    <span>Accept invite</span>
+                </button>
+            </ng-template>
+            <button mat-menu-item disabled>
+                <span>Invite to friends list</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

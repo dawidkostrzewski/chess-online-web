@@ -1,0 +1,20 @@
+<div class="games">
+    <div class="games-list">
+        <div class="games-list__header">
+            <div class="games-list__header--text">Games</div>
+            <div class="games-list__header--filter">Filter</div>
+        </div>
+        <div class="games-list__container">
+            <ng-container *ngIf="!loading; else loader">
+                <games-list-element *ngFor="let game of games" [routerLink]="game.gameId" [game]="game" routerLinkActive="active"></games-list-element>
+            </ng-container>
+            <ng-template #loader>
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </ng-template>
+        </div>
+    </div>
+    <div class="games-details-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+<div class="user-widget">
+    <div class="user-widget__display" (click)="changeActionsVisibility()">{{'Hello ' + userLogin}}</div>
+    <div class="user-widget__action" *ngIf="showActions">
+        <div class="user-widget__action-row" (click)="logout()">
+            <icon-svg [icon]="'logout'"></icon-svg>
+            <div>Logout</div>
+        </div>
+    </div>
+</div>

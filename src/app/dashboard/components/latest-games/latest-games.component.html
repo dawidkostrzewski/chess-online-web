@@ -1,0 +1,8 @@
+<div class="latest-games">
+    <div class="latest-games__header">
+        <div class="latest-games__header--text">Latest games</div>
+    </div>
+    <div class="latest-games__list">
+        <latest-games-list-element *ngFor="let game of games" [game]="game" (click)="navigateToGame(game.gameId)"></latest-games-list-element>
+    </div>
+</div>

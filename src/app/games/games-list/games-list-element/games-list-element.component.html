@@ -1,0 +1,10 @@
+<div class="games-list-element">
+    <div class="games-list-element__opponent">
+        <div class="games-list-element__opponent--header">Opponent:</div>
+        <div class="games-list-element__opponent--name">{{game?.opponentName}}</div>
+    </div>
+    <div class="games-list-element__status">
+        <div class="games-list-element__status--header">Game status:</div>
+        <div class="games-list-element__status--value">{{game?.finished ? 'Finished' : (game?.playerCanMove ? 'Waiting for player move' : 'Waiting for opponent move')}}</div>
+    </div>
+</div>

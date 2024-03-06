@@ -1,0 +1,21 @@
+<div class="opponent-suggestions">
+    <div class="opponent-suggestions__header">
+        <div class="opponent-suggestions__header--text">Opponent suggestions</div>
+    </div>
+    <div class="opponent-suggestions__list" *ngIf="!loading">
+        <ng-container *ngIf="opponentSuggestions?.suggestions?.length; else emptyList">
+            <opponent-list-element *ngFor="let opponent of opponentSuggestions?.suggestions"
+                                   [accountId]="accountId"
+                                   [opponent]="opponent"
+                                   (sendGameInvite)="handleSendGameInvite($event)"
+                                    (acceptGameInvite)="handleAcceptGameInvite($event)">
+            </opponent-list-element>
+            <div class="opponent-suggestions__list--actions">
+                <button mat-raised-button color="primary">Find new opponents</button>
+            </div>
+        </ng-container>
+        <ng-template #emptyList>
+            <div class="opponent-suggestions__list--empty">Missing opponents suggestion</div>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.chess-online
+    display: flex
+    flex-direction: row
+    &__menu
+        width: 100px
+        height: 100vh
+        box-sizing: border-box
+    &__content
+        display: flex
+        flex-direction: column
+        width: calc(100vw - 100px)
+        box-sizing: border-box
+        &--top
+            margin-left: 8px
+        &--details
+            display: flex
+            flex-direction: row
+            margin: 0
+            .chess-online-module-content
+                margin: 24px 32px
+                width: calc(100vw - 100px - 460px - 64px)
+            .chess-online-notification-content
+                width: 460px
+                max-height: 100vh
+                height: 100vh
+                margin-top: 24px
+

@@ -1,0 +1,75 @@
+<div class="profile-overview">
+    <div class="profile-information-overview">
+        <ng-container *ngIf="!loading; else loadingProfile">
+            <div class="profile-information-overview__image" *ngIf="profileImage">
+                <img [src]="profileImage" width="150px" height="150px" alt="">
+            </div>
+            <div class="profile-information-overview__main-info">
+                <div class="profile-information-overview__main-info--player-name">
+                    <span>{{accountInformation?.firstName}} {{accountInformation?.lastName}}</span>
+                </div>
+                <div class="profile-information-overview__main-info--basic-info">
+                    <div class="profile-overview-main-info-basic-info-container">
+                        <div class="profile-overview-main-info-row">
+                            <div class="profile-overview-main-info-row__info">{{statistics?.activeGames}}</div>
+                            <div class="profile-overview-main-info-row__description">Active games</div>
+                        </div>
+                        <div class="profile-overview-main-info-row">
+                            <div class="profile-overview-main-info-row__info">{{2}}</div>
+                            <div class="profile-overview-main-info-row__description">Chat messages</div>
+                        </div>
+                        <div class="profile-overview-main-info-row">
+                            <div class="profile-overview-main-info-row__info">{{statistics?.pendingInvites}}</div>
+                            <div class="profile-overview-main-info-row__description">Invites</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #loadingProfile>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+    </div>
+    <div class="profile-statistics-overview">
+        <ng-container *ngIf="!loading; else loadingStatistics">
+            <div class="profile-statistics-overview__title">
+                <span>Performance overview</span>
+            </div>
+            <div class="profile-statistics-overview__container">
+                <div class="profile-statistics-item">
+                    <div class="profile-statistics-item__icon">
+                        <icon-svg icon="leaderboard"></icon-svg>
+                    </div>
+                    <div class="profile-statistics-item__text">
+                        <div class="profile-statistics-item__text-description">Total games played</div>
+                        <div class="profile-statistics-item__text-value">{{statistics?.totalGamesPlayed}}</div>
+                    </div>
+                </div>
+
+                <div class="profile-statistics-item">
+                    <div class="profile-statistics-item__icon">
+                        <icon-svg icon="leaderboard"></icon-svg>
+                    </div>
+                    <div class="profile-statistics-item__text">
+                        <div class="profile-statistics-item__text-description">Wins %</div>
+                        <div class="profile-statistics-item__text-value">{{statistics?.winsPercent}}%</div>
+                    </div>
+                </div>
+
+                <div class="profile-statistics-item">
+                    <div class="profile-statistics-item__icon">
+                        <icon-svg icon="leaderboard"></icon-svg>
+                    </div>
+                    <div class="profile-statistics-item__text">
+                        <div class="profile-statistics-item__text-description">ELO rating points</div>
+                        <div class="profile-statistics-item__text-value">{{statistics?.points}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #loadingStatistics>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </ng-template>
+    </div>
+
+</div>

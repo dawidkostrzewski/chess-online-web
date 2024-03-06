@@ -1,0 +1,51 @@
+.latest-game-list-element
+    display: flex
+    flex-direction: row
+    padding: 8px
+    border: 1px solid #323232
+    border-radius: 16px
+    &:hover
+        background-color: rgb(200, 1, 199)
+        cursor: pointer
+        .latest-game-list-element-opponent
+            &__details
+                &--opponent-name-header
+                    color: #ffffff
+        .latest-game-list-element-game
+            &__status
+                &--header
+                    color: #ffffff
+    .latest-game-list-element-opponent
+        display: flex
+        flex-direction: row
+        flex: 1
+        &__details
+            display: flex
+            flex-direction: column
+            gap: 4px
+            &--opponent-name-header
+                font-size: 12px
+                color: #696969
+            &--opponent-name
+                font-size: 14px
+        &--profile-image
+            width: 40px
+            height: 40px
+            img
+                width: 40px
+                height: 40px
+                border-radius: 100%
+
+    .latest-game-list-element-game
+        display: flex
+        flex-direction: row
+        flex: 1
+        &__status
+            display: flex
+            flex-direction: column
+            gap: 4px
+            &--header
+                font-size: 12px
+                color: #696969
+            &--value
+                font-size: 14px

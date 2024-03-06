@@ -1,0 +1,38 @@
+\:host
+    &.active, &:hover
+        .games-list-element
+            cursor: pointer
+            background-color: rgb(200, 1, 199)
+            border-radius: 16px
+            &__opponent
+                &--header
+                    color: #ffffff
+            &__status
+                &--header
+                    color: #ffffff
+
+.games-list-element
+    display: flex
+    flex-direction: row
+    gap: 8px
+    padding: 8px
+    margin: 0 4px
+    &__opponent
+        display: flex
+        flex-direction: column
+        gap: 4px
+        &--header
+            font-size: 12px
+            color: #696969
+        &--name
+            font-size: 14px
+
+    &__status
+        display: flex
+        flex-direction: column
+        gap: 4px
+        &--header
+            font-size: 12px
+            color: #696969
+        &--value
+            font-size: 14px

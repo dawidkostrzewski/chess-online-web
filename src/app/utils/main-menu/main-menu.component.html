@@ -1,0 +1,7 @@
+<div class="main-menu">
+    <div class="main-menu__container">
+        <div class="main-menu__container--item" *ngFor="let item of MENU_ITEMS" [routerLink]="item.link" routerLinkActive="active">
+            <icon-svg [icon]="item.icon"></icon-svg>
+        </div>
+    </div>
+</div>
